@@ -1,0 +1,60 @@
+
+\section*{第2問}
+
+\subsection*{I. (1). }
+与えられたHamiltonianを代入すれば
+\begin{equation}
+  [\hat{x}, \hat{H}] = \left[ \hat{x}, \frac{\hat{p}^2}{2m} \right]
+  = \frac{1}{2m} \left( \hat{p} [\hat{x},\hat{p}] + [\hat{x}, \hat{p}] \hat{p} \right)
+  = \frac{i\hbar}{m} \hat{p}
+\end{equation}
+を得る. 
+同様にして
+\begin{equation}
+  [\hat{p}, \hat{H}]=-i\hbar m\omega^2\hat{x}
+\end{equation}
+となる. 
+
+\subsection*{I. (2). }
+状態$\ket{\psi}$は定常なので, Schr\"{o}dinger方程式を使うことで
+\begin{align*}
+  0=\frac{\dd}{\dd t}\bra{\psi}\hat{A}\ket{\psi}&=\pdv{\bra{\psi}}{t}\hat{A}\ket{\psi}+\bra{\psi}\hat{A}\pdv{\ket{\psi}}{t}\\
+  &=-\frac{\bra{\psi}}{i\hbar}\hat{H}\hat{A}\ket{\psi}+\bra{\psi}\hat{A}\frac{\hat{H}}{i\hbar}\ket{\psi}
+  =\frac{1}{i\hbar}\bra{\psi}\left[ \hat{A},\hat{H} \right]\ket{\psi}
+\end{align*}
+とかけるので, (1)の結果より
+\begin{equation}
+  0=\frac{1}{i\hbar}(-i\hbar m\omega^2)\braket{\hat{x}}, 0=\frac{1}{i\hbar}\frac{i\hbar}{m}\braket{\hat{p}}, \quad\therefore \braket{\hat{x}}=\braket{\hat{p}}=0
+\end{equation}
+を得る. 
+
+\subsection*{I. (3). }
+(2)の計算を使うと, 
+\begin{equation}
+  \frac{1}{i\hbar}\bra{\psi}\left[ \hat{x}\hat{p},\hat{H} \right]\ket{\psi}=\frac{\dd}{\dd{t}}\bra{\psi}\hat{x}\hat{p}\ket{\psi}=0
+\end{equation}
+なので, 左辺の交換関係を計算して整理することで
+\begin{equation}
+  \frac{m\omega^2}{2}\braket{\hat{x}^2}=\frac{1}{2m}\braket{\hat{p}^2}, \quad\therefore \braket{\hat{U}}=\braket{\hat{K}}
+\end{equation}
+を得る\footnote{virial定理から期待される結果と一致. }. 
+
+\subsection*{I. (4). }
+基底状態は定常状態なので, これまでの結果が使える. 
+(3)の結果から
+\begin{equation}
+  \bra{0}\hat{H}\ket{0}=\bra{0}\hat{K}\ket{0}+\bra{0}\hat{U}\ket{0}=2\bra{0}\hat{K}\ket{0}=2\bra{0}\hat{U}\ket{0}
+\end{equation}
+であり, $\bra{0}\hat{H}\ket{0}=\hbar\omega/2$なので
+\begin{equation}
+  \bra{0}\left( \frac{m\omega^2\hat{x}^2}{2} \right)\ket{0}=\bra{0}\left( \frac{\hat{p}^2}{2m} \right)\ket{0}=\frac{\hbar\omega}{4}, \quad\therefore \bra{0}\hat{x}^2\ket{0}=\frac{\hbar}{2m\omega}, \quad \bra{0}\hat{p}^2\ket{0}=\frac{m\hbar\omega}{2}
+\end{equation}
+また(2)より$\braket{\hat{x}}=\braket{\hat{p}}=0$なので, $\delta x_0$, $\delta y_0$の定義から
+\begin{equation}
+  \delta x_0=\sqrt{\frac{\hbar}{2m\omega}}, \quad \delta p_0=\sqrt{\frac{m\hbar\omega}{2}}
+\end{equation}
+を得る\footnote{$\delta x_0\cdot\delta p_0=\hbar/2$と計算され, 最小不確定になっていて安心. }. 
+
+\subsection*{I. (5).}
+
+
