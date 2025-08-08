@@ -1,0 +1,16 @@
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+*.w18
+*.bbl
+*.bcf
+*.blg
+*.xml
+*.nav
+myenv
+
+**/svg-inkscape/

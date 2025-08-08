@@ -1,0 +1,59 @@
+\usepackage[many]{tcolorbox}
+\newtcolorbox{mybox}{colframe=gray!25, colback=gray!25, sharp corners}
+\newtcolorbox{mybox2}{colframe=gray!10, colback=gray!10, sharp corners}
+\newtcolorbox{mybox3}{colframe=gray!5, colback=gray!5, sharp corners}
+\newtcolorbox{white}{colframe=gray!0, colback=gray!0, sharp corners}
+\newtcolorbox{black}{colframe=gray!100, colback=gray!0}
+
+\newenvironment{myproperty}{%
+\begin{property}}{\end{property}}
+\tcolorboxenvironment{myproperty}{blanker,
+before skip=6pt,after skip=6pt,
+borderline west={1mm}{-11pt}{teal}}
+
+\newenvironment{mydfn}{%
+\begin{dfn}}{\end{dfn}}
+\tcolorboxenvironment{mydfn}{colframe=gray!10, colback=gray!10, sharp corners}%{blanker,
+% before skip=6pt,after skip=6pt,
+% borderline west={1mm}{-11pt}{gray}}
+
+\newenvironment{mythm}{%
+\begin{thm}}{\end{thm}}
+\tcolorboxenvironment{mythm}{colframe=gray!20, colback=gray!20, sharp corners}%{blanker,
+% before skip=6pt,after skip=6pt,
+% borderline west={1mm}{-11pt}{black}}
+
+\newenvironment{myprop}{%
+\begin{prop}}{\end{prop}}
+\tcolorboxenvironment{myprop}{colframe=gray!20, colback=gray!20, sharp corners}%{blanker,
+% before skip=6pt,after skip=6pt,
+% borderline west={1mm}{-11pt}{gray}}
+
+\newenvironment{mylem}{%
+\begin{lem}}{\end{lem}}
+\tcolorboxenvironment{mylem}{colframe=gray!10, colback=gray!10, sharp corners}%{blanker,
+% before skip=6pt,after skip=6pt,
+% borderline west={1mm}{-11pt}{gray!50}}
+
+\usepackage{amsthm}
+\theoremstyle{definition}
+\newtheorem{dfn}{定義}[section]
+\newtheorem{prop}[dfn]{命題}
+\newtheorem{lem}[dfn]{補題}
+\newtheorem{thm}[dfn]{定理}
+\newtheorem{cor}[dfn]{系}
+\newtheorem{principle}[dfn]{要請}
+\newtheorem{rem}{注意}
+\newtheorem*{rem*}{注意}
+\newtheorem{fact}{事実}
+\newtheorem{e.g.}{例}
+\newtheorem{property}{性質}
+
+% 数式太文字
+\usepackage{bm}
+%proofカスタム
+\renewcommand{\proofname}{\textbf{証明}}
+%参照した数式にのみ数式番号を振ろう(2023/10/6)
+\usepackage{mathtools}
+\mathtoolsset{showonlyrefs=true}
+\numberwithin{equation}{section}

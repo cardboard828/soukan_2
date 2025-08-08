@@ -1,0 +1,22 @@
+\usepackage{unicode-math}
+\unimathsetup{math-style=ISO}
+
+\usepackage{amsmath}        % align etc.
+
+\usepackage{braket}
+\usepackage{nicematrix}
+\usepackage[per-mode=symbol]{siunitx}           % Unit setting
+\sisetup{
+    inter-unit-product=\ensuremath{\cdot},
+}
+\DeclareSIUnit{\Bit}{bit}
+\DeclareSIUnit{\Byte}{byte}
+\DeclareSIUnit{\decade}{decade}
+\DeclareSIUnit{\gauss}{G}
+
+\usepackage{cancel}             % Cancel terms in equations
+
+\usepackage[many]{tcolorbox}      % Highlight equations
+\newcommand{\highlight}[1]{\ensuremath\tcbhighmath{#1}}
+
+\usepackage[version=4]{mhchem}

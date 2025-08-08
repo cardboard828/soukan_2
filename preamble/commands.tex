@@ -1,0 +1,38 @@
+% Add numbers to equations inside silenced (*) environments
+\newcommand{\numberthis}{\addtocounter{equation}{1}\tag{\theequation}}
+
+% Set related math commands
+\newcommand{\N}{\ensuremath{\symbb{N}}}
+\newcommand{\Z}{\ensuremath{\symbb{Z}}}
+\newcommand{\Q}{\ensuremath{\symbb{Q}}}
+\newcommand{\R}{\ensuremath{\symbb{R}}}
+%\newcommand{\C}{\ensuremath{\symbb{C}}}
+\newcommand{\K}{\ensuremath{\symbb{K}}}
+
+\DeclareMathOperator{\Ima}{Im}
+
+
+% Linear algebra commands
+\newcommand{\identity}{\ensuremath{\symbb{1}}}
+\DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\tr}{tr}
+%\DeclareMathOperator{\dim}{dim}
+
+% Calculus commands
+\newcommand{\dv}[3][]{\ensuremath{\frac{d^{#1}{#2}}{d{#3}^{#1}}}}
+\newcommand{\pdv}[3][]{\ensuremath{\frac{\partial^{#1}{#2}}{\partial{#3}^{#1}}}}
+\newcommand{\vb}[1]{\ensuremath{\symbf{#1}}}
+\newcommand{\rot}{\ensuremath{\nabla \times}}
+\newcommand{\curl}{\ensuremath{\nabla \times}}
+\newcommand{\diver}{\ensuremath{\nabla \cdot}}
+\newcommand{\grad}{\ensuremath{\nabla}}
+\newcommand{\laplacian}{\ensuremath{\nabla^2}}
+\newcommand{\dd}{\text{d}}
+\newcommand{\const}{\text{const.}}
+
+% Physics related commands
+\newcommand{\Lagr}{\ensuremath{\symcal{L}}}     % Lagrangian
+\newcommand{\Ham}{\ensuremath{\symcal{H}}}      % Hamiltonian
+
+% Information theory related commands
+\newcommand{\binentr}{\ensuremath{\mathscr{H}}}
