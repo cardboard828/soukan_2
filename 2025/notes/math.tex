@@ -1,0 +1,200 @@
+\section*{第1問}
+
+\subsection*{I. (1).}
+$x=0$を代入すると$y=0$になる. 
+$x\neq 0$とする. 
+$x$で両辺割ると
+\begin{equation}
+  y'-\frac{y}{x}=x^2\label{math_pbI_(1)_ODE}
+\end{equation}
+となる. 
+上式の一般解を$y$, 特殊解を$y_0$とすると, 
+\begin{equation}
+  \left(\frac{\dd }{\dd x}-\frac{1}{x} \right)(y-y_0)=x^2-x^2=0
+\end{equation}
+となるので, まず\eqref{math_pbI_(1)_ODE}式の特殊解を1つ見つけた後に
+\begin{equation}
+  y'-\frac{y}{x}=0\label{math_pbI_(1)_ODE_easy}
+\end{equation}
+の一般解$y_1$を求めると, 求める一般解は$y_1+y_0$である. 
+
+$y_0={x^3}/{2}$とすると, これは\eqref{math_pbI_(1)_ODE}式の特殊解になっていることがわかる. 
+次に\eqref{math_pbI_(1)_ODE_easy}式の一般解を求める. 
+変数分離して積分すると, 
+\begin{equation}
+  \frac{\dd y}{y}=\frac{\dd x}{x}, \quad\therefore \ln{|y|}=\ln{|x|}+C, \quad\therefore \frac{y}{x}=A
+\end{equation}
+ここで$C, A$は定数. 
+以上より, 求める一般解は
+\begin{equation}
+  y=Ax+\frac{x^3}{2}
+\end{equation}
+となる（$x=0$で$y=0$も満たす）. 
+
+\subsection*{I. (2).}
+(1)と同じように, 与えられたODEの特殊解$y_0$を一つ見つけたあと, 
+\begin{equation}
+  y''+y'-2y=0\label{math_pbI_(2)_ODE_easy}
+\end{equation}
+の一般解を求めれば良い. 
+
+$y_0=(x^2-\frac{2}{3}x)e^x$とすると, これは欲しい特殊解になっている\footnote{私は$y=(ax^2+bx+c)e^{x}$を代入し, $a$, $b$, $c$を決める方針で特殊解を見つけた. 省いているけど, 答案にはこれが本当に特殊解になっていることを示した方が良いかも. }. 
+次に\eqref{math_pbI_(2)_ODE_easy}の一般解を求める. 
+$\lambda$を定数として, $y=e^{\lambda x}$を\eqref{math_pbI_(2)_ODE_easy}の左辺に代入すると, 
+\begin{equation}
+  \left(\frac{\dd^2}{\dd x^2}+\frac{\dd}{\dd x}-2\right)e^{\lambda x}=(\lambda^2+\lambda-2)e^{\lambda x}
+\end{equation}
+となるので, $\lambda=1, -2$のとき$y=e^{\lambda x}$は\eqref{math_pbI_(2)_ODE_easy}の解である. 
+この2解は独立で\footnote{Wronskianを計算してそれが非零を見せればもっと丁寧？}, 2階斉次線型微分方程式の一般解は独立な2解の重ね合わせなので, 一般解は
+\begin{equation}
+  y=Ae^{-2x}+Be^{x}
+\end{equation}
+（$A$, $B$は定数）となる. 
+以上より, 求める一般解は
+\begin{equation}
+  y=Ae^{-2x}+Be^{x}+\left(x^2-\frac{2}{3}x\right)e^x
+\end{equation}
+となる. 
+
+\subsection*{II. (1).}
+これは周期$2\pi$の周期関数であり, かつ偶関数なので
+\begin{equation}
+  f(x)=\frac{a_0}{2}+\sum_{n=1}^{\infty}a_n\cos{nx}
+\end{equation}
+とFourier級数展開される\footnote{$a_0$の項は2で割っておくと見通しが良い. 忘れていても\eqref{math_pbII_trigo_orthogonal}の計算をして上手く調整すれば良い. }. 
+非負整数$m, n$について
+\begin{equation}
+  \frac{1}{\pi}\int_{-\pi}^{\pi}\dd{x}\cos{mx}\cos{nx}=
+  \begin{cases}
+    1\quad (m=n), \\
+    0\quad (m\neq n). 
+  \end{cases}\label{math_pbII_trigo_orthogonal}
+\end{equation}
+なので, 
+\begin{equation}
+  a_n=\frac{1}{\pi}\int_{-\pi}^{\pi}\dd{x}x^2\cos{nx}=  \begin{cases}
+    \frac{2\pi^2}{3}\quad (n=0), \\
+    \frac{4(-1)^{n+1}}{n^2}\quad (n>0). 
+  \end{cases}
+\end{equation}
+と計算され（途中計算略）, 以上より
+\begin{equation}
+  f(x)=\frac{\pi^2}{3}+\sum_{n=1}^{\infty}\frac{4(-1)^{n+1}}{n^2}\cos{nx}
+\end{equation}
+となる. 
+
+\subsection*{II. (2). }
+$f(x)^2$の積分を2通りで表す. 
+\begin{align*}
+  \frac{2\pi^5}{5}
+  &=\int_{-\pi}^{\pi}\dd{x}f(x)^2\\
+  &=\int_{-\pi}^{\pi}\dd{x}\left( \frac{\pi^2}{3}+ \sum_{n=1}^{\infty}\frac{4(-1)^{n+1}}{n^2}\cos{nx}\right)^2\\
+  &=\frac{2\pi^5}{9}+\sum_{n=1}^{\infty}\frac{16}{n^4}\int_{-\pi}^{\pi}\dd{x}(\cos{nx})^2=\frac{2\pi^5}{9}+16\pi\sum_{n=1}^{\infty}\frac{1}{n^4}
+\end{align*}
+以上より, 
+\begin{equation}
+  s=\sum_{n=1}^{\infty}\frac{1}{n^4}=\frac{\pi^4}{90}
+\end{equation}
+となる. 
+
+\subsection*{III. 反例1つ目}
+常に成立しない. 
+\begin{equation}
+  f_n(x)=\begin{cases}
+    2(x-n)\quad (n\leq x\leq n+1/2), \\
+    -2(x-n-1)\quad (n+1/2\leq x\leq n), \\
+    0\quad (\text{otherwise}). 
+  \end{cases}
+\end{equation}
+とすると, これは$n\to\infty$で$f(x)=0$に各点収束し, 
+\begin{equation}
+  \int_{0}^{\infty}f_n(x)\dd{x}=\frac{1}{2}\xrightarrow{n\to\infty}\frac{1}{2}
+\end{equation}
+だが, 
+\begin{equation}
+  \int_{0}^{\infty}f(x)\dd{x}=0
+\end{equation}
+となり, 反例になっている\footnote{自力でできなかった. \cite{kyokugensekibun}を参考にした. }.
+
+\subsection*{III. 反例2つ目}
+今度は$f_n(x)$を以下のようにする. 
+
+\begin{equation}
+  f_n(x)=\begin{cases}
+    \frac{2}{n^2}x\quad (0\leq x\leq n/2), \\
+    -\frac{2}{n^2}x+\frac{2}{n}\quad (n/2\leq x\leq n), \\
+    0\quad (\text{otherwise}). 
+  \end{cases}
+\end{equation}
+1つ目と同じように考えれば, これは$f(x)=0$に収束するが\footnote{これは一様収束になっている. $\sup_{[0, \infty)}|f_n(x)-f(x)|=1/n\xrightarrow{n\to\infty} 0$より従う. 各点収束よりも強い一様収束についての反例にもなっているのが偉い. 友人のM君に教えてもらった. }, $n$を飛ばす前の三角形の面積は$n$に依存せず$1/2$なので, 反例になっている. 
+
+
+\subsection*{IV. (1). }
+$i,j=1,2,3,4$について, $Ae_i$, $e_jA$を愚直に計算することで
+\begin{equation}
+  M=\begin{pmatrix}
+    0&-c&b&0\\
+    -b&a-d&0&b\\
+    c&0&d-a&-c\\
+    0&c&-b&0
+  \end{pmatrix}
+\end{equation}
+を得る. 
+
+\subsection*{IV. (2). }
+$bc\neq 0$なので$b\neq 0$かつ$c\neq 0$である. 
+そこで$b$ないしは$c$が対角成分にくるように$M$を行基本変形すると, $\text{rank}{M}=2$とわかる. 
+従って
+\begin{equation}
+  \text{dim}\text{Ker}f_A=4-\text{rank}M=2
+\end{equation}
+とわかる. 
+最後に$\text{Ker}f_A$の基底を構成する. 
+$e_1'\coloneqq e_1+e_4$とすれば, 
+\begin{equation}
+  f_A(e_1')=f_A(e_1)+f_A(e_4)=
+  \begin{pmatrix}
+    0\\
+    -b\\
+    c\\
+    0
+  \end{pmatrix}
+  +
+  \begin{pmatrix}
+    0\\
+    b\\
+    -c\\
+    0
+  \end{pmatrix}
+  =0
+\end{equation}
+なので, $e_1'\in \text{Ker}f_A$. 
+また, $e_2'\coloneqq (a-d)e_1+be_2+ce_3$とすれば, 同じような計算から$f_A(e_2')=0$, よって$e_2'\in \text{Ker}f_A$がわかる. 
+$e_1'$, $e_2'$は独立で, $\text{Ker}f_A$の次元は2なので, $\{e_1', e_2'\}$は求める基底となっている. 
+
+
+\subsection*{V. (1)}
+$a$, $b$を定数として, $f=r^n(a\sin{n\theta}+b\cos{n\theta})$とすると, 
+\begin{equation}
+  \Delta f=\begin{cases}
+    \left\{ n(n-1)r^{n-2}+nr^{n-2}-n^2r^{n-2} \right\}(a\sin{n\theta}+b\cos{n\theta})=0\quad (n\geq 2), \\
+    \left( \frac{1}{r}-\frac{1}{r} \right)(a\sin{n\theta}+b\cos{n\theta})=0\quad (n=1). 
+  \end{cases}
+\end{equation}
+となるので, この$f$は答え. 
+
+
+\subsection*{V. (2)}
+3倍角の公式から, $\sin^3{\theta}=(3\sin\theta-\sin{3\theta})/4$とかけるが, (1)の結果から$3r\sin{\theta}/4$も$-r^3\sin{3\theta}/4$もLaplace方程式の解であり, Laplace方程式は解の重ね合せもまた解になることより, 
+\begin{equation}
+  u=\frac{3r}{4}\sin{\theta}-\frac{r^3}{4}\sin{3\theta}
+\end{equation}
+は求めるべき境界値問題の解になっている. 
+これを$(x,y)$座標系に直せば（$x=r\cos\theta$, $y=r\sin\theta$などを使って）,
+\begin{equation}
+  u=\frac{y}{4}(3-3x^2+y^2)
+\end{equation} 
+を得る. 
+
+
+
