@@ -56,5 +56,143 @@
 を得る\footnote{$\delta x_0\cdot\delta p_0=\hbar/2$と計算され, 最小不確定になっていて安心. }. 
 
 \subsection*{I. (5).}
+$\hat{x}$, $\hat{p}$はエルミート演算子になっているため, 生成演算子は
+\begin{equation}
+  \hat{a}^\dag=\frac{1}{2}\left( \frac{\hat{x}}{\delta x_0}-i\frac{\hat{p}}{\delta p_0} \right)
+\end{equation}
+とかけ, 従って
+\begin{equation}
+  \hat{x}=\delta x_0(\hat{a}+\hat{a}^\dag)
+\end{equation}
+とかける. 
+さらに, 第$n$励起状態$\ket{n}$に対して, $\braket{i|j}=\delta_{ij}$, $\hat{a}^\dag\ket{n}=\sqrt{n+1}\ket{n+1}$, $n\geq 1$について$\hat{a}\ket{n}=\sqrt{n}\ket{n-1}$, $\hat{a}\ket{0}=0$となることも断りなしに使う\footnote{本当に勝手にこんな性質使ってしまっていいのかは分からない...}.
+すると直交性から
+\begin{equation}
+  \bra{\phi(\theta)}\hat{x}\ket{\phi(\theta)}=0
+\end{equation}
+また, $\hat{x}$ のエルミート性から
+\begin{align*}
+  \bra{\phi(\theta)}\hat{x}^2\ket{\phi(\theta)}&=(\delta x_0)^2\left( \cos\theta\bra{1}-\sin\theta(\sqrt{2}\bra{1}+\sqrt{3}\bra{3}) \right)\left( \cos\theta\ket{1}-\sin\theta(\sqrt{2}\ket{1}+\sqrt{3}\ket{3}) \right)\\
+  &=(\delta x_0)^2(1+4\sin^2\theta-2\sqrt{2}\sin\theta\cos\theta)
+\end{align*}
+以上より求める揺らぎは
+\begin{equation}
+  \delta x(\theta)=2\delta x_0 \left( \frac{1}{4}+\sin^2\theta-\frac{\sin\theta\cos\theta}{\sqrt{2}} \right)^{1/2}
+\end{equation}
+と計算される。 
+
+最後に揺らぎの最小値を求める. 
+\begin{align*}
+  \sin^2\theta-\frac{1}{\sqrt{2}}\sin\theta\cos\theta&=\frac{1-\cos 2\theta}{2}-\frac{\sin 2\theta}{2\sqrt{2}}
+  =\frac{1}{2}-\frac{\sqrt{6}}{4}\sin(2\theta+\beta)
+\end{align*}
+と変形できるので, $\theta_{\text{min}}={\pi}/{4}-{\beta}/{2}$のとき$\delta x(\theta)$は最小値をとり, このとき
+\begin{equation}
+  \delta x(\theta_{\text{min}})=\delta x_0\sqrt{3-\sqrt{6}}
+\end{equation}
+となる. 
+これは$\delta x_0$より小さい. 
+
+
+\subsection*{II. (1). }
+$\ket{0}$は$\hat{Z}$の固有値1の固有状態なので, 
+\begin{equation}
+  \hat{U}_{\hat{H_0}}(t)\ket{0}=e^{-{i\omega t}/{2}}\ket{0}
+\end{equation}
+となる. 
+
+\subsection*{II. (2). }
+$(c_1\hat{X}+c_2\hat{Y}+c_3\hat{Z})^2=\hat{I}$を使うと, 
+\begin{align*}
+  \exp(-\frac{i\hat{H}t}{\hbar})&=\exp(-i\omega t(c_1\hat{X}+c_2\hat{Y}+c_3\hat{Z}))\\
+  &=\sum_{n=0}^\infty\frac{(-1)^n}{(2n)!}(\omega t)^{2n}\cdot\hat{I}+i\sum_{n=1}^\infty\frac{(-1)^n}{(2n-1)!}(\omega t)^{2n-1}\cdot(c_1\hat{X}+c_2\hat{Y}+c_3\hat{Z})\\
+  &=\cos\omega t\cdot\hat{I}-i\sin\omega t\cdot (c_1\hat{X}+c_2\hat{Y}+c_3\hat{Z})
+\end{align*}
+これより, 
+\begin{equation}
+  \alpha_0(t)=\cos\omega t, \quad \alpha_i(t)=-ic_i\sin\omega t \quad (i=1,2,3)
+\end{equation}
+となる\footnote{この問題では$\hat{H}=\hbar\omega (c_1\hat{X}+c_2\hat{Y}+c_3\hat{Z})$だったが, このHamiltonianに単位行列$\hat{I}$の定数倍が加わった場合の一般の時間発展演算子を求める問題が2021年度の東大物工の量子で出題されていた. その場合, この問題に加えて演算子が交換するとき使える演算子の指数法則を使って解けばいい（一回やらないと気づくのは割と難しい気がする. ）. }. 
+
+
+\subsection*{II. (3). }
+$\ket{+}\coloneqq (\ket{0}+\ket{1})/\sqrt{2}$, $\ket{-}\coloneqq (\ket{0}-\ket{1})/\sqrt{2}$とすると, これは$\hat{X}$の固有値$\pm 1$の2つの独立な固有状態なので, 
+\begin{equation}
+  \hat{U}_{\hat{H}_\Omega}(t)\ket{\pm}=e^{\mp i\Omega t/2}\ket{\pm}
+\end{equation}
+となり, グローバル位相しか$\Omega$に依存していないので, この2状態は$\hat{H}_\Omega$による時間発展後$\Omega$に依存しない. 
+以上より, 求める状態は例えば$\ket{+}$となる\footnote{今考えている2準位系を$\{\ket{+}, \ket{-}\}$が張っているため, その線形結合で表される任意の状態は相対位相の部分が$\Omega$に依存してしまうため, (3)の条件を満たす状態は$\ket{\pm}$のみだとわかる. }. 
+
+
+
+\subsection*{II. (4). }
+(2)の結果を使う. 
+\begin{equation}
+  \hat{H}_0+\hat{H}_1=\frac{\hbar \omega}{\sqrt{2}}\left( \frac{\hat{X}}{\sqrt{2}}+\frac{\hat{Z}}{\sqrt{2}} \right)
+\end{equation}
+とかけるため, 
+\begin{equation}
+  \hat{U}_{\hat{H}_0+\hat{H}_1}(t)=\cos\frac{\omega t}{\sqrt{2}}\cdot\hat{I}-i\sin\frac{\omega t}{\sqrt{2}}\cdot \left(\frac{\hat{X}}{\sqrt{2}}+\frac{\hat{Z}}{\sqrt{2}}\right)
+\end{equation}
+となる. 
+これを使うと
+\begin{equation}
+  \hat{U}_{\hat{H}_0+\hat{H}_1}(t)\ket{0}=\cos\frac{\omega t}{\sqrt{2}}\ket{0}-i\sin\frac{\omega t}{\sqrt{2}}\ket{+}
+\end{equation}
+とかけるため, $\ket{0}$からこのHamiltonianを使って$\ket{-}$にすることはできず, $\ket{0}$から$\ket{+}$にする最小の時間を探せば良いとわかる. 
+以上より求める時間は
+\begin{equation}
+  t=\frac{\pi}{\sqrt{2}\omega}
+\end{equation}
+となる. 
+
+
+\subsection*{II. (5). }
+(2)の結果を使えば
+\begin{equation}
+  \hat{U}_{\hat{H}_0}(t)=\cos\frac{\omega t}{2}\cdot \hat{I}-i\sin\frac{\omega t}{2}\cdot\hat{Z}, \quad \hat{U}_{\hat{H}_1}(t)=\cos\frac{\omega t}{2}\cdot \hat{I}-i\sin\frac{\omega t}{2}\cdot\hat{X} 
+\end{equation}
+とかけるため, 
+\begin{align*}
+  \hat{U}_{\hat{H}_0}(\Delta t)\hat{U}_{\hat{H}_1}(\Delta t)&=\left\{  \left( 1-\frac{\omega^2(\Delta t)^2}{8} \right)\cdot \hat{I}-i\frac{\omega\Delta t}{2}\cdot\hat{Z}+\symcal{O}((\Delta t)^3)\right\}\cdot \left\{  \left( 1-\frac{\omega^2(\Delta t)^2}{8} \right)\cdot \hat{I}-i\frac{\omega\Delta t}{2}\cdot\hat{X}+\symcal{O}((\Delta t)^3)\right\}\\
+  &=\left( 1-\frac{\omega^2(\Delta t)^2}{4} \right)\hat{I}-i\frac{\omega\Delta t }{2}\hat{X}-i\frac{\omega\Delta t }{2}\hat{Z}-\frac{\omega^2(\Delta t)^2}{4}\hat{Z}\cdot\hat{X}+\symcal{O}((\Delta t)^3)
+\end{align*}
+
+一方で(4)での計算より
+\begin{equation}
+  \hat{U}_{\hat{H}_0+\hat{H}_1}(\Delta t)=\left( 1-\frac{\omega^2(\Delta t)^2}{4} \right)\hat{I}-i\frac{\omega\Delta t}{\sqrt{2}}\left( \frac{\hat{X}}{\sqrt{2}}+\frac{\hat{Z}}{\sqrt{2}} \right)+\symcal{O}((\Delta t)^3)
+\end{equation}
+
+なので, 
+
+\begin{equation}
+  \hat{U}_{\hat{H}_0+\hat{H}_1}(\Delta t)-\hat{U}_{\hat{H}_0}(\Delta t)\hat{U}_{\hat{H}_1}(\Delta t)=\frac{\omega^2(\Delta t)^2}{4}\hat{Z}\cdot\hat{X}+\symcal{O}((\Delta t)^3)
+\end{equation}
+と計算される. 
+
+
+\subsection*{II. (6). }
+
+$\Delta t=t/N$とすれば, (5)の結果より
+\begin{equation}
+  \hat{U}_{\hat{H}_0+\hat{H}_1}\left(\frac{t}{N}\right)-\frac{\omega^2}{4}\hat{Z}\cdot\hat{X}\left( \frac{t}{N} \right)^2+\symcal{O}\left(  \left( \frac{t}{N} \right)^2\right)=\hat{U}_{\hat{H}_0}\left(\frac{t}{N}\right)\hat{U}_{\hat{H}_1}\left(\frac{t}{N}\right)
+\end{equation}
+
+とかけるので, 
+\begin{align*}
+  \hat{V}_N(t)&=\left\{  \hat{U}_{\hat{H}_0+\hat{H}_1}\left(\frac{t}{N}\right)-\frac{\omega^2}{4}\hat{Z}\cdot\hat{X}\left( \frac{t}{N} \right)^2+\symcal{O}\left(  \left( \frac{t}{N} \right)^2\right)\right\}^N\\
+  &\simeq\hat{U}_{\hat{H}_0+\hat{H}_1}(t)+\symcal{O}\left( \frac{t^2}{N} \right)
+\end{align*}
+と計算できて\footnote{$N-1\simeq N$回$\hat{U}_{\hat{H}_0+\hat{H}_1}(t/N)$を取って, 残り1回$\omega^2 \hat{Z}\cdot\hat{X}(t/N)^2/4$の項を選ぶ場合の数は${}_N C_1=N$なので, $\symcal{O}\left( \frac{t^2}{N} \right)$となる. }, 従って
+\begin{equation}
+  \sqrt{\bra{\Delta_N}\ket{\Delta_N}}=\symcal{O}\left( \frac{t^2}{N} \right)\lesssim \epsilon, \quad\therefore N\gtrsim \frac{t^2}{\epsilon}
+\end{equation} 
+と評価できると考えられる\footnote{（参考）関連した話題に, リーの積公式, Trotter分解があると思われる. 詳しくは\cite{naoto shiraishi}を参照. }. 
+
+
+
+
+
+
 
 

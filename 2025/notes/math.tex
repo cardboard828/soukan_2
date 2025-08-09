@@ -39,12 +39,12 @@ $y_0={x^3}/{2}$とすると, これは\eqref{math_pbI_(1)_ODE}式の特殊解に
 の一般解を求めれば良い. 
 
 $y_0=(x^2-\frac{2}{3}x)e^x$とすると, これは欲しい特殊解になっている\footnote{私は$y=(ax^2+bx+c)e^{x}$を代入し, $a$, $b$, $c$を決める方針で特殊解を見つけた. 省いているけど, 答案にはこれが本当に特殊解になっていることを示した方が良いかも. }. 
-次に\eqref{math_pbI_(2)_ODE_easy}の一般解を求める. 
-$\lambda$を定数として, $y=e^{\lambda x}$を\eqref{math_pbI_(2)_ODE_easy}の左辺に代入すると, 
+次に\eqref{math_pbI_(2)_ODE_easy}式の一般解を求める. 
+$\lambda$を定数として, $y=e^{\lambda x}$を\eqref{math_pbI_(2)_ODE_easy}式の左辺に代入すると, 
 \begin{equation}
   \left(\frac{\dd^2}{\dd x^2}+\frac{\dd}{\dd x}-2\right)e^{\lambda x}=(\lambda^2+\lambda-2)e^{\lambda x}
 \end{equation}
-となるので, $\lambda=1, -2$のとき$y=e^{\lambda x}$は\eqref{math_pbI_(2)_ODE_easy}の解である. 
+となるので, $\lambda=1, -2$のとき$y=e^{\lambda x}$は\eqref{math_pbI_(2)_ODE_easy}式の解である. 
 この2解は独立で\footnote{Wronskianを計算してそれが非零を見せればもっと丁寧？}, 2階斉次線型微分方程式の一般解は独立な2解の重ね合わせなので, 一般解は
 \begin{equation}
   y=Ae^{-2x}+Be^{x}
@@ -61,7 +61,7 @@ $\lambda$を定数として, $y=e^{\lambda x}$を\eqref{math_pbI_(2)_ODE_easy}�
 \begin{equation}
   f(x)=\frac{a_0}{2}+\sum_{n=1}^{\infty}a_n\cos{nx}
 \end{equation}
-とFourier級数展開される\footnote{$a_0$の項は2で割っておくと見通しが良い. 忘れていても\eqref{math_pbII_trigo_orthogonal}の計算をして上手く調整すれば良い. }. 
+とFourier級数展開される\footnote{$a_0$の項は2で割っておくと見通しが良い. 忘れていても\eqref{math_pbII_trigo_orthogonal}式の計算をして上手く調整すれば良い. }. 
 非負整数$m, n$について
 \begin{equation}
   \frac{1}{\pi}\int_{-\pi}^{\pi}\dd{x}\cos{mx}\cos{nx}=
