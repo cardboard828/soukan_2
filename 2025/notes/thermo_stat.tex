@@ -19,6 +19,123 @@
     +\left( \pdv[2]{U}{S} \right)_V(\delta S)^2+2\frac{\partial^2 U}{\partial S \partial V}\delta S\delta V+\left( \pdv[2]{U}{V} \right)_S(\delta V)^2>0
   \end{multlined}
 \end{equation}
+上式が任意の$\delta V$, $\delta S$について成立するので, 1次の係数は0になるべきで, 
+\begin{equation}
+  \left( \pdv{U}{V} \right)_S=-p, \quad \left( \pdv{U}{S} \right)_V=T\label{stat_pbI(2)_zenbibun}
+\end{equation}
+となり, 2次について
+\begin{equation}
+  \left( \pdv[2]{U}{S} \right)_V(\delta S)^2+2\frac{\partial^2 U}{\partial S \partial V}\delta S\delta V+\left( \pdv[2]{U}{V} \right)_S(\delta V)^2>0\label{stat_pbI(2)}
+\end{equation}
+を得る\footnote{以上の議論は\cite{Kubo}の3章を参考にした. 内部エネルギーの凸性を要請して, \eqref{stat_pbI(2)}式を導出する方針でも良いと思う. }. 
+
+
+
+\subsection*{I. (3). }
+\eqref{stat_pbI(2)}式を変形すれば
+\begin{equation}
+  \begin{pmatrix}
+    \delta S&\delta V
+  \end{pmatrix}
+  \cdot
+  \begin{pmatrix}
+    \left( \pdv[2]{U}{S} \right)_V&\frac{\partial^2 U}{\partial S \partial V}\\
+    \frac{\partial^2 U}{\partial S \partial V}&\left( \pdv[2]{U}{V} \right)_S
+  \end{pmatrix}
+  \cdot
+  \begin{pmatrix}
+    \delta S\\
+    \delta V
+  \end{pmatrix}
+  >
+  0
+\end{equation}
+となるので, Hessianを$A$として
+\begin{equation}
+  A\coloneqq 
+    \begin{pmatrix}
+    \left( \pdv[2]{U}{S} \right)_V&\frac{\partial^2 U}{\partial S \partial V}\\
+    \frac{\partial^2 U}{\partial S \partial V}&\left( \pdv[2]{U}{V} \right)_S
+  \end{pmatrix}
+\end{equation}
+は正定値とわかる. 
+従って特に$\text{det}A>0$である. 
+
+以上を踏まえて$C_P$, $\kappa_T$を変形していく. 
+\begin{equation}
+  C_P=T\left( \pdv{S}{T} \right)_P
+\end{equation}
+とかけるが, 
+\begin{align*}
+  \left( \pdv{S}{T} \right)_P
+  &=\frac{\partial (S,P)}{\partial (S,V)}\frac{\partial (S,V)}{\partial (T,P)}\\
+  &=\left( \pdv{P}{V} \right)_S\frac{1}{\frac{\partial (T,P)}{\partial (S,V)}}\\
+  &=-\left( \pdv[2]{U}{V} \right)_S\frac{1}{-\left( \pdv[2]{U}{S} \right)_V\left( \pdv[2]{U}{V} \right)_S+\frac{\partial^2 U}{\partial S\partial V}\frac{\partial^2 U}{\partial S\partial V}}\\
+  &=\left( \pdv[2]{U}{V} \right)_S\frac{1}{\text{det}{A}}
+\end{align*}
+と変形できる. 
+途中\eqref{stat_pbI(2)_zenbibun}式を使った. 
+\eqref{stat_pbI(2)}式で特に$\delta S=0$とすると
+\begin{equation}
+  \left( \pdv[2]{U}{V} \right)_S>0
+\end{equation}
+を得る. 
+以上より, 
+\begin{equation}
+  \left( \pdv{S}{T} \right)_P>0
+\end{equation}
+であり, $T>0$でもあるので$C_P>0$を得る\footnote{この, 内部エネルギーの自然な変数についてのHessianの任意の主小行列式が非負であることを使った$C_P\geq 0$の証明はYさんに教えてもらった. Jacobianの定義やそれを使った計算方法, Hessianの任意の主小行列式が非負, については\cite{shimizu_thermo_II}を参照. }. 
+
+$\kappa_T$についても同様に
+\begin{equation}
+  \left( \pdv{V}{P} \right)_T=\frac{\partial (V,T)}{\partial (S,V)}\frac{\partial (S,V)}{\partial (P,T)}=-\left( \pdv[2]{U}{S} \right)_V\frac{1}{\text{det}{A}}<0
+\end{equation}
+なので, $V>0$と合わせて$\kappa_T>0$が従う\footnote{（別解）$C_P>0$は$C_P-C_V>0$かつ$C_V>0$を使っても解ける（私はこの方針で解いた）, $\kappa_T>0$も似た感じで示せたはず. }. 
+
+\subsection*{II. (1). }
+例によって$\left( \pdv{T}{P} \right)_H$をJacobianを使って変形していく\footnote{ちなみにこのIIの(1), (2), (3)の第二法則の視点からの解釈以外は\cite{Kubo}第3章A問題[10]とほぼ同じである. }. 
+\begin{align*}
+  \left( \pdv{T}{P} \right)_H&=\frac{\partial (T,H)}{\partial (P,S)}\frac{\partial (P,S)}{\partial (P,H)}\\
+  &=\left( \pdv{T}{P} \right)_S-\left( \pdv{H}{P} \right)_S\left( \pdv{T}{S} \right)_P\left( \pdv{S}{H} \right)_P\\
+  &=\left( \pdv{V}{S} \right)_P-V\frac{T}{C_P}\frac{1}{T}\\
+  &=\frac{\left( \pdv{V}{T} \right)_P}{\left( \pdv{S}{T} \right)_P}-\frac{V}{C_P}\\
+  &=\frac{V}{C_P}\left( \alpha T-1 \right)
+\end{align*}
+従って
+\begin{equation}
+  \dd{T}=\frac{V}{C_P}\left( \alpha T-1 \right)\dd{P}
+\end{equation}
+を得る. 
+
+\subsection*{II. (2). }
+今度はエンタルピー一定の過程ではなく, 準静断熱過程, つまりエントロピー一定の過程なので, 
+\begin{equation}
+  \dd{T}=\left( \pdv{T}{P} \right)_S\dd{P}+\left( \pdv{T}{S} \right)_P\dd{S}\label{stat_pbII_dTtenkai}
+\end{equation}
+と展開したとき$\dd{S}=0$, よって
+\begin{equation}
+  \dd{T}=\left( \pdv{T}{P} \right)_S\dd{P}
+\end{equation}
+とかけ, これを(1)と同じように評価する. 
+
+\begin{align*}
+  \left( \pdv{T}{P} \right)_S&=\frac{\partial (T,S)}{\partial (P,T)}\frac{\partial (P,T)}{\partial (P,S)}\\
+  &=\left( \pdv{V}{T} \right)_P\frac{T}{C_P}\\
+  &=\frac{V\alpha T}{C_P}
+\end{align*}
+と計算され, 
+\begin{equation}
+  \dd{T}=\frac{V\alpha T}{C_P}\dd{P}
+\end{equation}
+を得る. 
+
+\subsection*{II. (3). }
+今$\alpha>0$で, $C_P, V, T>0$なので, ${V\alpha T}/{C_P}>V(\alpha T-1)/C_P$であり, $\dd{P}<0$のときは断熱準静操作の方が温度は下がると考えられる. 
+
+また, $\dd{T}$は\eqref{stat_pbII_dTtenkai}のように展開されるが, Joule-Thomson過程は準静ではない断熱過程なので, 熱力学第二法則より$\dd{S}>0$であり, 加えてI.(3)の結果から$\left( \pdv{T}{S} \right)_P>0$でもあるため, 1項目の温度を下げる効果を2項目が打ち消してしまっている. 
+
+
+
 
 
 
