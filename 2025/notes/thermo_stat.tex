@@ -8,7 +8,17 @@
 \end{equation}
 
 \subsection*{I. (2). }
-気体は熱力学的に安定なので, $\delta Q>T\dd{S}$であり, 
+気体は熱力学的に安定なので, $\delta Q>T\delta{S}$であり, また, 系に仮想的変化$\delta U$, $\delta V$を与えると, 
+\begin{equation}
+  \delta U+p\delta V-T\delta S> 0
+\end{equation}
+ここで$\delta U$を2次まで展開すると
+\begin{equation}
+  \begin{multlined}[t]
+    \left\{ \left( \pdv{U}{V} \right)_S+p \right\}\delta V+\left\{ \left( \pdv{U}{S} \right)_V-T \right\}\delta S\\
+    +\left( \pdv[2]{U}{S} \right)_V(\delta S)^2+2\frac{\partial^2 U}{\partial S \partial V}\delta S\delta V+\left( \pdv[2]{U}{V} \right)_S(\delta V)^2>0
+  \end{multlined}
+\end{equation}
 
 
 
