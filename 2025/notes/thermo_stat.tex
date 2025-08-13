@@ -174,7 +174,87 @@ $\kappa_T$についても同様に
 を得る. 
 
 \subsection*{III. (4). }
+Hamiltonianに付加項$-\sum_{i=1}^N E\mu I\cos\theta_i$が加わるので, 系の分配関数$Z'$は
+\begin{align*}
+  Z'&=Z\cdot \left( \int_{0}^\pi \dd{\theta}\sqrt{\frac{2I\pi}{\beta}}\sin\theta e^{\beta E\mu\cos\theta} \right)^N/\left( \int\dd{\theta}\int\dd{p_{\phi}}e^{-\beta p_{i\phi}^2/(2I\sin^2\theta_i)} \right)^N\\
+  &=Z\cdot \left( \frac{\sinh \beta E\mu}{\beta E\mu} \right)^N
+\end{align*}
+これを使うと, 
+\begin{align*}
+  \mathcal{P}_z&=\frac{1}{\beta}\frac{\partial}{\partial E}\left( \log{Z'} \right)\cdot\frac{1}{V}\\
+  &=\frac{N\mu}{V}\left( \coth{(\beta E\mu)}-\frac{1}{\beta E\mu} \right)
+\end{align*}
+を得る\footnote{これはLangevin関数, 問題の書きぶり的に$\beta=1/(k_B T)$に直した方がいいかも. }. 
+また, 
+\begin{equation}
+  \coth{\beta E\mu}\xrightarrow{E\to\infty}1, \quad \frac{1}{E\beta\mu}\xrightarrow{E\to\infty}0
+\end{equation}
+なので
+\begin{equation}
+  \mathcal{P}_z\xrightarrow{E\to\infty}\frac{N\mu}{V}
+\end{equation}
+となる\footnote{$E\to \infty$で全ての双極子が同じ上を向く. }. 
 
+\subsection*{III. (5). }
+Langevin関数を$x=0$周りでTaylor展開すると, 
+\begin{equation}
+  \coth(x)-\frac{1}{x}=\left( \frac{1}{x}+\frac{x}{3}+\symcal{O}(x^3) \right)-\frac{1}{x}=\frac{x}{3}+\symcal{O}(x^3)
+\end{equation}
+なので, (4)の結果から$x=0$付近での傾きは低温の方が大きく, また$E\to\infty$で同じ$N\mu/V$に近づくことを踏まえると, 答えは図\ref{fig:stat_III(5)}のようになると考えられる\footnote{単調増加はLangevin関数を微分すればわかるが, 上凸かどうかは2回微分してもわからなかった. Langevin関数だから形は既知ということなのか？？}. 
+
+\begin{figure}[H]
+  \centering
+  \includesvg[width=13cm]{graph/2-langevin.svg}
+  \caption{(5)解答}\label{fig:stat_III(5)}
+\end{figure}
+
+
+\subsection*{III. (6). }
+
+(4), (5)などから
+
+\begin{equation}
+  \mathcal{P}_z=\frac{N\mu}{V}\left( \frac{\beta E\mu}{3}+\symcal{O}((\beta E\mu)^3) \right)
+\end{equation}
+と書けるので, 
+\begin{equation}
+  \varepsilon_0\chi=\lim_{E\to 0}\pdv{\mathcal{P}_z}{E}=\frac{N\mu^2}{3Vk_B T}, \quad\therefore \chi=\frac{N\mu^2}{3\varepsilon_0 Vk_B T}
+\end{equation}
+となる. 
+従って, 電気感受率の温度依存性のグラフは反比例になる（図略）. 
+
+\subsection*{III. (7). }
+(4)で得た分配関数$Z'$から内部エネルギーを計算すると, 
+\begin{equation}
+  U=-\frac{\partial}{\partial \beta}\left( \log{Z}+N\log{\frac{\sinh(\beta E\mu)}{\beta E\mu}} \right)=\frac{7Nk_B T}{2}-NE\mu\coth(\beta E\mu)
+\end{equation}
+なので, 系の定積熱容量は
+\begin{equation}
+  C_V=\left( \pdv{U}{T} \right)_V=\frac{7Nk_B}{2}-\frac{Nk_B (\beta E\mu)^2}{\sinh^2(\beta E\mu)}
+\end{equation}
+と計算される. 
+ここで, 
+\begin{equation}
+  \lim_{x\to 0}\frac{\sinh x}{x}=1, \quad \lim_{x\to\infty}\frac{x}{\sinh{x}}=0
+\end{equation}
+なので, 
+\begin{equation}
+  \lim_{T\to 0}C_V=\frac{7Nk_B}{2}, \quad \lim_{T\to \infty}C_V=\frac{5Nk_B}{2}
+\end{equation}
+となる. 
+この結果は
+\begin{itemize}
+  \item $T\to\infty$: $E$の影響が熱揺らぎに対して小さく無視されて, (3)の結果に漸近していく. 
+  \item $T\to 0$: 双極子がが$z$方向に揃ったところからずれる自由度でも熱を受け取れるようになり, $T\to\infty$よりも大きくなっている\footnote{エネルギー等分配則っぽいけれど, 本当に等分配則由来なのかは分からないので, 言及しないのが無難？}. 
+\end{itemize}
+と解釈できる. 
+
+以上より, 求めるグラフは以下の図\ref{fig:statIII_(7)}のようになる. 
+\begin{figure}[H]
+  \centering
+  \includesvg[width=13cm]{graph/Hinetsu.svg}
+  \caption{(7)の解答}\label{fig:statIII_(7)}
+\end{figure}
 
 
 
