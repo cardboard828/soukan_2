@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2025-08-13T13:24:02.660059</dc:date>
+    <dc:date>2025-08-13T13:44:26.776487</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -475,7 +475,53 @@ L 578.829087 81.934064
 L 601.193816 81.264316 
 L 621.428571 80.8186 
 L 621.428571 80.8186 
-" clip-path="url(#pb4b8de3138)" style="fill: none; stroke: #1f77b4; stroke-width: 1.5; stroke-linecap: square"/>
+" clip-path="url(#pc2fe4d0e10)" style="fill: none; stroke: #1f77b4; stroke-width: 1.5; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 90 356.76 
+L 117.969925 356.76 
+L 145.93985 356.76 
+L 173.909774 356.76 
+L 201.879699 356.76 
+L 229.849624 356.76 
+L 257.819549 356.76 
+L 285.789474 356.76 
+L 313.759398 356.76 
+L 341.729323 356.76 
+L 369.699248 356.76 
+L 397.669173 356.76 
+L 425.639098 356.76 
+L 453.609023 356.76 
+L 481.578947 356.76 
+L 509.548872 356.76 
+L 537.518797 356.76 
+L 565.488722 356.76 
+L 593.458647 356.76 
+L 621.428571 356.76 
+" clip-path="url(#pc2fe4d0e10)" style="fill: none; stroke-dasharray: 5.55,2.4; stroke-dashoffset: 0; stroke: #ff0000; stroke-width: 1.5"/>
+   </g>
+   <g id="line2d_3">
+    <path d="M 90 79.56 
+L 117.969925 79.56 
+L 145.93985 79.56 
+L 173.909774 79.56 
+L 201.879699 79.56 
+L 229.849624 79.56 
+L 257.819549 79.56 
+L 285.789474 79.56 
+L 313.759398 79.56 
+L 341.729323 79.56 
+L 369.699248 79.56 
+L 397.669173 79.56 
+L 425.639098 79.56 
+L 453.609023 79.56 
+L 481.578947 79.56 
+L 509.548872 79.56 
+L 537.518797 79.56 
+L 565.488722 79.56 
+L 593.458647 79.56 
+L 621.428571 79.56 
+" clip-path="url(#pc2fe4d0e10)" style="fill: none; stroke-dasharray: 5.55,2.4; stroke-dashoffset: 0; stroke: #ff0000; stroke-width: 1.5"/>
    </g>
    <g id="patch_3">
     <path d="M 90 384.48 
@@ -500,7 +546,7 @@ L 648 51.84
   </g>
  </g>
  <defs>
-  <clipPath id="pb4b8de3138">
+  <clipPath id="pc2fe4d0e10">
    <rect x="90" y="51.84" width="558" height="332.64"/>
   </clipPath>
  </defs>
