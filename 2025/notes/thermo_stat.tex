@@ -134,6 +134,47 @@ $\kappa_T$についても同様に
 
 また, $\dd{T}$は\eqref{stat_pbII_dTtenkai}のように展開されるが, Joule-Thomson過程は準静ではない断熱過程なので, 熱力学第二法則より$\dd{S}>0$であり, 加えてI.(3)の結果から$\left( \pdv{T}{S} \right)_P>0$でもあるため, 1項目の温度を下げる効果を2項目が打ち消してしまっている. 
 
+\subsection*{III. (1). }
+
+積分を実行する. 
+
+\begin{align*}
+  Z&=\begin{multlined}[t]
+    \frac{1}{h^{3N}N!}\int\prod_{i=1}^{N}\dd{x_i}\dd{y_i}\dd{z_i}\cdot\int\prod_{i=1}^N\dd{p_{ix}}\dd{p_{iy}}\dd{p_{iz}}e^{-\beta\sum_{i=1}^N\vb{p}^2/(2M)}\\
+    \cdot\int\prod_{i=1}^N\dd{p_{i\theta}}e^{-\beta\sum_{i=1}^N p_{i\theta}^2/(2I)}
+    \cdot\int\prod_{i=1}^N\dd{\phi_i}
+    \cdot \int\prod_{i=1}^N\dd{p_{i\phi}}\dd{\theta_i}e^{-\beta\sum_{i=1}^N\frac{1}{2I}\frac{p_{i\phi}^2}{\sin^2\theta_i}}
+  \end{multlined}\\
+  &=\frac{V^N}{h^{5N}N!}\left( \int\dd{p}e^{-\beta p^2/(2M)} \right)^{3N}\cdot\left( \int\dd{p_\theta}e^{-\beta p_\theta^2/(2I)} \right)^N\cdot (2\pi)^N\cdot\left( \int\dd{\theta}\int\dd{p_{\phi}}e^{-\beta p_{i\phi}^2/(2I\sin^2\theta_i)} \right)^N\\
+  &=\frac{V^N}{h^{5N}N!}\cdot\left( \frac{2I\pi}{\beta} \right)^N\cdot (4\pi)^N\cdot\left( \frac{2M\pi}{\beta} \right)^{3N/2}
+\end{align*}
+
+と計算される. 
+途中でGauss積分の公式を使った. 
+
+\subsection*{III. (2). }
+
+系のHelmholtz自由エネルギーは$F=-k_B T\log{Z}$で与えられ, 更に熱力学から$P=-\left( \pdv{F}{V} \right)_{T,N}$とかける. 
+(1)の計算を代入すれば
+\begin{equation}
+  P=k_B T\frac{\partial}{\partial V}(N\log V)=\frac{Nk_B T}{V}
+\end{equation}
+を得る. 
+
+\subsection*{III. (3). }
+
+公式$U=-\frac{\partial}{\partial \beta}(\log{Z})$を使うと
+\begin{equation}
+  U=-\frac{\partial}{\partial\beta}(-N\log\beta-\frac{3N}{2}\log\beta)=\frac{5Nk_B T}{2}
+\end{equation}
+従って
+\begin{equation}
+  C_V=\left( \pdv{U}{T} \right)_V=\frac{5Nk_B}{2}
+\end{equation}
+を得る. 
+
+\subsection*{III. (4). }
+
 
 
 
